@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form id="myForm">
+    <select id="selectNumber">
+        <option>Choose a number</option>
+    </select>
+</form>
+
+<script>
+var select = document.getElementById("selectNumber");
+
+var options = {{ title | safe }};
+
+for(var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
+
+{% endblock %}

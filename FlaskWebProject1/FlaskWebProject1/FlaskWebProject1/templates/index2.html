@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italy Certificates</title>
+  <link rel="stylesheet" href="/static/content/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Italy Certificates</h1>
+  </header>
+  <br><hr><br>
+  <!-- Form -->
+  <form action="" method="get">
+    <div>
+      <label for="">Current Country</label>
+      <input type="text" name="country" placeholder="Current country of residence">
+    </div>
+    <div>
+       <label for="">What service do you need?
+       </label>
+       <select name="certificate" id="selectNumber">
+         <option>Choose a number</option>
+       </select>
+    </div>
+  </form>
+
+</body>
+
+<script>
+  var select = document.getElementById("selectNumber");
+  var options = {{ title | safe }};
+
+  for (var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+  }
+</script>
+
+</html>
